@@ -102,6 +102,26 @@
         </dependency>
     </dependencies>
 
+    <repositories>
+        <repository>
+            <releases />
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>jboss-ga-repository1</id>
+            <url>https://maven.repository.redhat.com/ga</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <releases />
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>jboss-ga-repository1</id>
+            <url>https://maven.repository.redhat.com/ga</url>
+        </pluginRepository>
+    </pluginRepositories>
     <build>
         <plugins>
             <plugin>
