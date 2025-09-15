@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<smooks-resource-list
+        xmlns="https://www.smooks.org/xsd/smooks-2.0.xsd"
+        xmlns:core="https://www.smooks.org/xsd/smooks/smooks-core-1.6.xsd"
+        xmlns:edi="https://www.smooks.org/xsd/smooks/edi-2.0.xsd">
+
+    <core:filterSettings defaultSerialization="false"/>
+
+    <!-- Configure the EDI visitor to serialise each event in the stream to its EDI counterpart -->
+    <core:smooks filterSourceOn="#document">
+        <core:config>
+            <smooks-resource-list>
+                <edi:unparser schemaUri="src/main/resources/edi-to-xml-order-mapping.dfdl.xsd"
+                              segmentTerminator="%NL;"
+                              dataElementSeparator="*"
+                              compositeDataElementSeparator="^"
+                              unparseOnNode="*"/>
+            </smooks-resource-list>
+        </core:config>
+    </core:smooks>
+
+</smooks-resource-list>
